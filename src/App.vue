@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive, onMounted } from "vue";
+import { ref, reactive, onMounted, computed } from "vue";
 import AlertaVue from "./components/Alerta.vue";
 
 const monedas = ref([
@@ -49,6 +49,10 @@ const obtenerCotizacion = async () => {
   const data = await respuesta.json();
   cotizacion.value = data.DISPLAY[criptomoneda][moneda];
 };
+
+const mostrarResultado = computed(() => {
+  return Object.values(cotizacion.value).length > 0;
+});
 </script>
 
 <template>
@@ -83,7 +87,7 @@ const obtenerCotizacion = async () => {
         <input type="submit" value="Cotizar" />
       </form>
 
-      <div class="contenedor-resultado">
+      <div v-if="mostrarResultado" class="contenedor-resultado">
         <h2>Contización</h2>
 
         <div class="resultado">
