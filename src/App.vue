@@ -37,6 +37,13 @@ const cotizarCripto = () => {
     }, 3000);
     return;
   }
+
+  obtenerCotizacion();
+};
+
+obtenerCotizacion = async () => {
+  const { moneda, criptomoneda } = cotizar;
+  const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`;
 };
 </script>
 
