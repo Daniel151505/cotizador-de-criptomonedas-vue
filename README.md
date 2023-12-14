@@ -1,6 +1,6 @@
 # Link de la aplicación
 
-https://cotizador-de-criptomonedas-vue.netlify.app/
+https://cryptocurrency-quoter-vue.netlify.app/
 
 # Vue 3 + Vite
 
